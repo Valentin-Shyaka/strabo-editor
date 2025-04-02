@@ -551,11 +551,11 @@ const initBaseConfig = () => {
   baseConfig = { data: [], config: {} }
   //
   baseConfig.data = [
-    { tabkey: shortId(), A: '', B: '系列1', C: '系列2', D: '系列3' },
-    { tabkey: shortId(), A: '类别 1', B: 4.3, C: 2.4, D: 2 },
-    { tabkey: shortId(), A: '类别 2', B: 2.5, C: 4.4, D: 2 },
-    { tabkey: shortId(), A: '类别 3', B: 3.5, C: 1.8, D: 3 },
-    { tabkey: shortId(), A: '类别 4', B: 4.5, C: 2.8, D: 5 },
+    { tabkey: shortId(), A: '', B: 'column 1', C: 'column 2', D: 'column3' },
+    { tabkey: shortId(), A: 'row 1', B: 4.3, C: 2.4, D: 2 },
+    { tabkey: shortId(), A: 'row 2', B: 2.5, C: 4.4, D: 2 },
+    { tabkey: shortId(), A: 'row 3', B: 3.5, C: 1.8, D: 3 },
+    { tabkey: shortId(), A: 'row 4', B: 4.5, C: 2.8, D: 5 },
   ]
   for (let i = 0; i < 17; i++) {
     baseConfig.data.push({ tabkey: shortId(), A: '', B: '', C: '', D: '' })

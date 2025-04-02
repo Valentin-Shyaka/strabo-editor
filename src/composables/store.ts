@@ -97,6 +97,7 @@ export const useStore = createGlobalState(() => {
         watermark,
         showLineNumber: false,
         showToc: false,
+        showComments: false,
         zoomLevel: 100,
         autoWidth: false,
         preview: {

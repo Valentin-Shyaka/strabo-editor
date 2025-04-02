@@ -393,8 +393,8 @@ const defaultOptions: UmoEditorOptions = {
     content: '',
     placeholder: {
       en_US: 'Please enter the document content...',
-      zh_CN: '请输入文档内容...',
-      ru_RU: 'Пожалуйста, введите содержимое документа...',
+      zh_CN: 'Please enter the document content...',
+      ru_RU: 'Please enter the document content...',
     },
     enableSpellcheck: true,
     enableMarkdown: true,

@@ -36,6 +36,9 @@
           <template #bubble_menu="slotProps">
             <slot name="bubble_menu" v-bind="slotProps" />
           </template>
+          <template #comments>
+       <slot name="comments" ></slot>
+     </template>
         </container-page>
         <editor-source v-else />
       </main>
@@ -91,6 +94,7 @@ const emits = defineEmits([
   'changed:pageMargin',
   'changed:pageBackground',
   'changed:pageShowToc',
+  'changed: showComments',
   'changed:pagePreview',
   'changed:pageZoom',
   'changed:pageWatermark',
@@ -264,6 +268,13 @@ watch(
   () => page.value.showToc,
   (showToc: boolean) => {
     emits('changed:pageShowToc', showToc)
+  },
+)
+
+watch(
+  () => page.value.showComments,
+  (showComments: boolean) => {
+    emits('changed:pageShowComments', showComments)
   },
 )
 

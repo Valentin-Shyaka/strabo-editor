@@ -73,6 +73,14 @@
     />
     <container-search-replace />
     <container-print />
+    <container-comment-section
+       v-if="page.showComments"
+       @close="page.showComments = false"
+     >
+     <template #comments>
+       <slot name="comments" ></slot>
+     </template>
+     </container-comment-section>
   </div>
 </template>
 

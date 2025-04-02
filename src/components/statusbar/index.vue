@@ -212,6 +212,14 @@
             {{ page.zoomLevel }}%
           </t-button>
         </tooltip>
+        <t-button
+           class="umo-status-bar-button"
+           variant="text"
+           size="small"
+           @click="page.showComments = !page.showComments"
+         >
+           <icon name="comment" />
+          </t-button>
       </div>
       <t-dropdown
         :attach="container"
