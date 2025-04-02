@@ -489,7 +489,7 @@ const defaultOptions: UmoEditorOptions = {
   },
   async onSave() {
     return await new Promise((_, reject) => {
-      reject(new Error('Key "onSave": Please set the save method'))
+      reject(new Error('Document Not Saved, check your connectivity !'))
     })
   },
   async onFileUpload(file: File) {

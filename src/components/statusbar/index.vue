@@ -213,11 +213,13 @@
           </t-button>
         </tooltip>
         <t-button
-           class="umo-status-bar-button"
+        v-if="!page.showComments"
+           class="umo-status-comment-button"
            variant="text"
            size="small"
-           @click="page.showComments = !page.showComments"
+           @click="page.showComments = true"
          >
+         <p>Comments</p>
            <icon name="comment" />
           </t-button>
       </div>
@@ -510,6 +512,16 @@ const toggleSpellcheck = () => {
       display: none;
     }
   }
+  .umo-status-comment-button{
+   
+  padding: 8px;
+  background-color: blue;
+  color: white;
+  position: fixed;
+  bottom: 1rem;
+  right: 30rem
+  
+}
   .umo-status-bar-split {
     height: 16px;
     width: 1px;
