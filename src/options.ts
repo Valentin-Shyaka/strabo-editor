@@ -493,13 +493,17 @@ const defaultOptions: UmoEditorOptions = {
     })
   },
   async onFileUpload(file: File) {
-    return await new Promise((_, reject) => {
-      if (!file) {
-        reject(new Error('File not found'))
-        return
-      }
-      reject(new Error('Key "onFileUpload": Please set the upload method'))
-    })
+    return new Promise<{ id: string; url: string }>((resolve) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64 = reader.result as string;
+        resolve({
+          id: crypto.randomUUID(), // Unique ID for the image
+          url: base64              // Base64 string
+        });
+      };
+      reader.readAsDataURL(file);
+    });
   },
   onFileDelete() {
     console.error(

@@ -114,18 +114,26 @@ const nodeStyle = $computed(() => {
 
 const uploadImage = async () => {
   if (node.attrs.uploaded || !node.attrs.file) {
-    return
+    return;
   }
   try {
-    const { id, url } =
-      (await options.value?.onFileUpload?.(node.attrs.file)) ?? {}
+    const result = await options.value?.onFileUpload?.(node.attrs.file);
+    console.log('==========', result);
+    if (!result || typeof result.url !== 'string') {
+      throw new Error('Invalid base64 URL returned from onFileUpload');
+    }
     if (containerRef.value) {
-      updateAttributes({ id, src: url, file: null, uploaded: true })
+      updateAttributes({
+        id: result.id || crypto.randomUUID(), // Use provided ID or generate one
+        src: result.url,                     // Use the url property
+        file: null,
+        uploaded: true
+      });
     }
   } catch (error) {
-    useMessage('error', (error as Error).message)
+    useMessage('error', (error as Error).message);
   }
-}
+};
 const onLoad = async () => {
   if (node.attrs.width === null) {
     const { clientWidth = 1, clientHeight = 1 } = imageRef ?? {}

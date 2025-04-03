@@ -136,7 +136,7 @@ onMounted(async () => {
     try {
       const { id, url } = await options.value.onFileUpload(node.attrs.file)
       if (containerRef.value) {
-        updateAttributes({ id, url, file: null, uploaded: true })
+        updateAttributes({ id, src: url, file: null, uploaded: true })
       }
     } catch (e) {
       useMessage('error', (e as Error).message)
