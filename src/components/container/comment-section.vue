@@ -1,11 +1,6 @@
 <template>
     <div class="umo-comment-container">
-        <div class="umo-toc-title">
-          <icon class="icon-toc" name="toc" /> {{ 'Comments'}}
-          <div class="umo-dialog__close" @click="$emit('close')">
-            <icon name="close" />
-          </div>
-        </div>
+       
         <div class="umo-toc-content umo-scrollbar">
             <slot name='comments'>
               </slot>
@@ -68,7 +63,7 @@
     
     <style lang="less" scoped>
     .umo-comment-container {
-      background-color: var(--umo-color-white);
+      background-color: transparent;
       border-right: solid 1px var(--umo-border-color);
       width: 400px;
       height: 77vh;
