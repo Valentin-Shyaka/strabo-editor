@@ -71,10 +71,13 @@
       background-color: var(--umo-color-white);
       border-right: solid 1px var(--umo-border-color);
       width: 400px;
+      height: 77vh;
       box-sizing: border-box;
       display: flex;
+      margin-top: 20px;
+      margin-right: 20px;
       flex-direction: column;
-      position: relative;
+      position: sticky;
       .umo-toc-resize-handle {
         position: absolute;
         top: 0;

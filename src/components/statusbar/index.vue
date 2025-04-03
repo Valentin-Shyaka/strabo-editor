@@ -517,8 +517,8 @@ const toggleSpellcheck = () => {
   padding: 8px;
   background-color: blue;
   color: white;
-  position: fixed;
-  bottom: 1rem;
+  position: absolute;
+  bottom: 0.2rem;
   right: 30rem
   
 }

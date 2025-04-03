@@ -6,7 +6,7 @@ import type { SupportedLocale } from '@/types'
 
 import en_US from './locales/en-US.json'
 import ru_RU from './locales/ru-RU.json'
-import zh_CN from './locales/zh-CN.json'
+// import zh_CN from './locales/zh-CN.json'
 
 const { options } = useStore()
 
@@ -20,11 +20,10 @@ const getLocale = (lang: SupportedLocale) => {
 
 export const i18n = createI18n({
   legacy: false,
-  locale: options.value.locale || 'zh-CN',
-  defaultLocale: 'zh-CN',
+  locale: options.value.locale ?? 'ru-RU',
+  defaultLocale: 'en-US',
   messages: {
     'en-US': merge(en_US, getLocale('en-US')),
-    'zh-CN': merge(zh_CN, getLocale('zh-CN')),
     'ru-RU': merge(ru_RU, getLocale('ru-RU')),
   },
 })
