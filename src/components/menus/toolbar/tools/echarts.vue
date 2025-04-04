@@ -323,7 +323,8 @@ const setConfirm = () => {
       const dialog = useAlert({
         theme: 'warning',
         header: t('tools.echarts.text'),
-        body: t('tools.echarts.settingerror'), // 请确认预览视图是否正确显示！
+        body: t('tools.echarts.settingerror'), 
+        confirmBtn: 'confirm',
         onConfirm() {
           dialog.destroy()
         },
