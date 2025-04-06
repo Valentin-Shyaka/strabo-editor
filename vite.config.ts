@@ -8,11 +8,10 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import { defineConfig } from 'vite'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import tsConfigPaths from 'vite-tsconfig-paths'
-
+import {nodePolyfills} from 'vite-plugin-node-polyfills'
 import pkg from './package.json'
 import copyright from './src/utils/copyright'
 
-// Plugin configurations
 const vuePlugins = {
   VueMacros: VueMacros({
     plugins: {
@@ -86,6 +85,7 @@ export default defineConfig({
     tsConfigPaths(),
     ReactivityTransform(),
     ...Object.values(vuePlugins),
+    nodePolyfills(),
   ],
   css: cssConfig,
   build: buildConfig,
