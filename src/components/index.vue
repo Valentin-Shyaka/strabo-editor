@@ -678,11 +678,11 @@ const saveContent = async (showMessage = true) => {
     emits('saved')
     if (showMessage) {
       MessagePlugin.closeAll()
-      useMessage('success', {
-        content: t('save.success'),
-        placement: 'bottom',
-        offset: [0, -20],
-      })
+      // useMessage('success', {
+      //   content: t('save.success'),
+      //   placement: 'bottom',
+      //   offset: [0, -20],
+      // })
     }
     const time = useTimestamp({ offset: 0 })
     savedAt.value = time.value
